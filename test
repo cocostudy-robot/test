@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>偶数・奇数分け</title>
+  <style>
+    body{
+      background:beige;
+    }
+h1{
+  color:red;
+}
+  </style>
+</head>
+<body>
+  <h1>偶数か奇数か判定します！</h1>
+
+  <label for="numberInput">数字を入力：</label>
+  <input type="number" id="numberInput">
+  <button onclick="checkEvenOdd()">判定</button>
+
+  <p id="result"></p>            
+
+  <script>
+    function checkEvenOdd() {
+      const input = document.getElementById("numberInput").value;
+      const num = Number(input);
+      const resultElement = document.getElementById("result");
+
+      // 入力チェック
+      if (input === "" || Number.isNaN(num)) {
+        resultElement.textContent = "正しい数字を入力してください。";
+        return;
+      }
+
+      if (num % 2 === 0) {　　　　　　//余りが１なら奇数０なら偶数
+        resultElement.textContent = num + " は偶数です。";
+      } else {
+        resultElement.textContent = num + " は奇数です。";
+      }
+    }
+  </script>
+</body>
+</html>
